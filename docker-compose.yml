@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  # explorer-py-app:
+    # container_name: "explorer-py"
+    # build:
+      # context: .
+      # dockerfile: docker/Dockerfile-app
+    # env_file:
+      # - .env.production
+    # command: tail -f /dev/null
+    # depends_on:
+      # - db
+  db:
+    container_name: "explorer-py-db"
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER=explorer-py-user
+      - POSTGRES_PASSWORD=pwd24oEi87
+      - POSTGRES_DB=explorer-py
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data

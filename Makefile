@@ -9,6 +9,10 @@ db.console: ## Open the db-console
 	echo "TODO:"
 .PHONY: db-console
 
+db.shell: ## Open the shell in the db container
+	docker-compose exec db bash
+.PHONY: db.shell
+
 test: ## Run the tests
 	echo "TODO:"
 .PHONY: test
