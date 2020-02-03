@@ -6,7 +6,7 @@ db.rebuild: ## Rebuilds the DBs
 .PHONY: rebuild-dbs
 
 db.console: ## Open the db-console
-	echo "TODO:"
+	docker-compose exec db psql explorer-py explorer-py-user
 .PHONY: db-console
 
 db.shell: ## Open the shell in the db container
