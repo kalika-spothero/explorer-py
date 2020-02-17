@@ -9,6 +9,12 @@ db.console: ## Open the db-console
 	docker-compose exec db psql explorer-py explorer-py-user
 .PHONY: db-console
 
+db.build: ## Builds the DB
+	@docker-compose exec -T db psql postgres explorer-py-user -c 'DROP DATABASE IF EXISTS "explorer-py";'
+	@docker-compose exec -T db psql postgres explorer-py-user -c 'CREATE DATABASE "explorer-py";'
+	docker-compose exec -T db psql explorer-py explorer-py-user < resources/schema.sql
+.PHONY: db.build
+
 db.shell: ## Open the shell in the db container
 	docker-compose exec db bash
 .PHONY: db.shell
