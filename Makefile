@@ -31,6 +31,9 @@ run: build ## Run app locally
 	echo "TODO:"
 .PHONY: run
 
+test: ## Runs the tests
+	poetry run pytest tests
+.PHONY: test
 
 help: ## Prints this help message
 	@grep -h -E '^[a-zA-Z0-9\._-]+:.*?## .*$$' $(MAKEFILE_LIST) |\
