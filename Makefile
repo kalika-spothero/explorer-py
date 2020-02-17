@@ -19,10 +19,6 @@ db.shell: ## Open the shell in the db container
 	docker-compose exec db bash
 .PHONY: db.shell
 
-test: ## Run the tests
-	echo "TODO:"
-.PHONY: test
-
 repl: ## Run a REPL for development
 	echo "TODO:"
 .PHONY: repl
@@ -32,7 +28,7 @@ run: build ## Run app locally
 .PHONY: run
 
 test: ## Runs the tests
-	poetry run pytest tests
+	poetry run mamba --format documentation
 .PHONY: test
 
 help: ## Prints this help message
